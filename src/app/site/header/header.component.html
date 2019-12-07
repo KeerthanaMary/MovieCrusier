@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg  navbar fixed-top" style="background-color:rgb(190, 131, 218)">
+    <a class="navbar-brand text-dark" [routerLink]="['']"><i class="material-icons navbar-brand-icon text-dark">local_movies</i>Movie Cruiser</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-dark" [routerLink]="['/menu']">Movie List <span class="sr-only">(current)</span></a>
+            </li>
+             <li *ngIf="getUser() && !isAdmin()" class="nav-item">
+                <a class="nav-link text-dark" [routerLink]="['/cart']">Favorites</a>
+            </li>
+            <li *ngIf="getUser() && isAdmin()" class="nav-item">
+                <a class="nav-link nav-account text-light" [routerLink]="['/profile',getUser().username]"><i class="material-icons nav-account-icon textlight">perm_identity</i>{{getUser().firstname}} - Admin</a>
+            </li>
+            <li *ngIf="getUser() && !isAdmin()" class="nav-item">
+                <a class="nav-link text-dark nav-account" [routerLink]="['/profile',getUser().username]"><i class="material-icons nav-account-icon">perm_identity</i>{{getUser().firstname}}</a>
+            </li>
+            <li *ngIf="!getUser()" class="nav-item">
+                <a class="nav-link text-dark" [routerLink]="['/login']">Login</a>
+            </li>
+            <li *ngIf="!getUser()" class="nav-item">
+                <a class="nav-link text-dark" [routerLink]="['/signup']">Signup</a>
+            </li>
+            <li class="nav-item" *ngIf="getUser()">
+                <a class="nav-link text-dark" [routerLink]="" (click)="onLogout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div class="container-fluid mt-1 py-4"></div>

@@ -1,0 +1,10 @@
+<div class="jumbotron container-fluid search-container">
+    <div class="container-fluid">
+    <h2 class="text-light" style="background-color: rgb(171, 141, 253);width:11%">FIND MOVIE</h2>
+    <div class="input-group-prepend my-3">
+        <span class="input-group-text"><i class="material-icons">movie</i></span>
+        <input type="text" #searchBox (input)="onSearch($event)"  placeholder="Search Movie" class="form-control"/>
+    </div>
+    </div>
+</div>
+

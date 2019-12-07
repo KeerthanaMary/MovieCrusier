@@ -1,0 +1,72 @@
+
+
+   <ng-template *ngIf="isAdminUser();then Admin else customer"></ng-template>
+   <ng-template #customer>
+       
+        <div class="card ">
+  <img [src]="movieitem.imageurl" class="card-img-top" alt="..." height="300px">
+                        <div class="card-body  card-style">
+                            
+                            <div class="inline-block">
+                                <span>
+                                    <label for="sandwich" class="card-title">{{movieitem.title}}</label>
+                                    <label for="sandwich-price" class="card-title float-right">{{movieitem.budget | currency:'INR'}}</label>
+                                </span>
+                            </div>
+                            <div class="inline-block">
+                                <span>
+                                        <b class="card-text"><span [className]="movieitem.active?'badge badge-success item-status':'badge badge-danger item-status'">{{movieitem.active?'Active':'Inactive'}}</span>{{movieitem.Genre }}</b>
+                                    <b class="badge badge-secondary badge-info float-right" *ngIf="movieitem.hasTeaser">Has Teaser </b>
+                                    <b class="material-icons text-dark float-right ml-1">
+                                        movie
+                                    </b>
+                                </span>
+                            </div>
+                            <div class="inline-block">
+                                    <div class="container date-of-launch-container">
+                                            <small class="cart-text date-of-launch"><i class="material-icons date-of-launch-icon">access_time</i>Launch</small>
+                                    </div>
+                                    <div>
+                                            <small class="cart-text">{{movieitem.dateoflaunch | date:'shortDate'}}</small>
+                                        </div>
+                                <button type="button" (click)="onAddToCart(movieitem.id)" class="btn  float-right mt-3" style="background-color: rgb(190, 131, 218)"><b class="material-icons float-md-left mr-1" >favorite</b>Add to fav</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+                <ng-template #Admin>
+                        <div class="card ">
+                  <img [src]="movieitem.imageurl" class="card-img-top" alt="..." height="300px">
+                                        <div class="card-body">
+                                            <div class="inline-block">
+                                                <span>
+                                                    <label for="sandwich" class="card-title">{{movieitem.title}}</label>
+                                                    <label for="sandwich-price" class="card-title float-right">{{movieitem.budget | currency:'INR'}}</label>
+                                                </span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <span>      
+                                                        <b class="card-text"><span [className]="movieitem.active?'badge badge-success item-status':'badge badge-danger item-status'">{{movieitem.active?'Active':'Inactive'}}</span>{{movieitem.Genre}}</b>
+                                                    <b class="badge badge-secondary badge-info float-right" *ngIf="movieitem.hasTeaser">Has Teaser </b>
+                                                    <b class="material-icons text-dark float-right ml-1">
+                                                        movie
+                                                    </b>
+                                                </span>
+                                            </div>
+                                            <div class="inline-block">
+                                                    <div class="container date-of-launch-container">
+                                                            <small class="cart-text date-of-launch"><i class="material-icons date-of-launch-icon">access_time</i>Launch</small>
+                                                    </div>
+                                                    <div>
+                                                            <small class="cart-text">{{movieitem.dateoflaunch | date:'shortDate'}}</small>
+                                                        </div>
+                                                <button type="button" (click)="onEdit(movieitem.id)" class="btn  float-right mt-3" style="background-color:  rgb(190, 131, 218)"><b class="material-icons float-md-left mr-1">edit</b>Edit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+         
+        <div class="container-fluid">
+
+        </div>

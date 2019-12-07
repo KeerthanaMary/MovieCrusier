@@ -1,0 +1,13 @@
+
+
+
+<app-search-movie></app-search-movie>
+<div class="container-fluid items-row1" >
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor='let movie of filteredMovieList'>
+            <app-movie-info  [movie_item]="movie" (addToCartRequest)="addToCart($event)"></app-movie-info>
+        </div>             
+    </div>
+</div>
+
+<!-- <app-food-item-info *ngFor='let food of foodItem' [food_item]="food"></app-food-item-info> -->

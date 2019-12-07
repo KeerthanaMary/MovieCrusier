@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+.jumbotron 
+{
+    background-image: url("https://ae01.alicdn.com/kf/HTB1xsqJbPfguuRjSspkq6xchpXaw/Laeacco-Lavender-Flowers-Wooden-Boards-Floor-Texture-Scene-Baby-Photography-Backgrounds-Photographic-Backdrops-For-Photo-Studio.jpg");  
+    
+}
+body{
+    /* background-image: url("https://images.unsplash.com/photo-1546543353-a8d8baed94be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80"); */
+    /* background-size: 100% 100%;
+  
+    background-position: center top; */
+}
+.container
+{
+    max-width: 940px;
+  margin: 0 auto;
+  padding: 0
+}
+.card-style
+{
+    background-color: lightsteelblue;
+    opacity:0.8 
+}
